@@ -1,0 +1,29 @@
+{% extends 'secondapp/base.html' %}
+
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+
+    <h2>Add Student</h2>
+
+    {% if form.errors %}
+        <p style="color:red;">Please fix the errors below!</p>
+    {% endif %}
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <p style="color:red;">{{ field.errors.as_text }}</p>
+                {% endif %}
+            </p>
+        {% endfor %}
+
+        <button type="submit">DBAO</button>
+    </form>
+
+{% endblock %}

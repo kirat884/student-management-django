@@ -1,0 +1,27 @@
+{% extends 'secondapp/base.html' %}
+
+{% block title %}Students List{% endblock %}
+
+{% block content %}
+
+    <h1>Students List</h1>
+
+    <a href="/add-student/">Add New Student</a>
+
+    <ul>
+        {% for student in students %}
+            <li>
+                <strong>{{ student.name }}</strong>
+                Age: {{ student.age }} —
+                Email: {{ student.email }} —
+                Enrolled: {{ student.enrolled }}
+
+                <a href="/edit-student/{{ student.id }}/">Edit</a>
+                <a href="/delete-student/{{ student.id }}/">Delete</a>
+            </li>
+        {% empty %}
+            <li>No students found!</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

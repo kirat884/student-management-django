@@ -128,3 +128,4 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CSRF_TRUSTED_ORIGINS = ['https://student-management-django-production.up.railway.app']
